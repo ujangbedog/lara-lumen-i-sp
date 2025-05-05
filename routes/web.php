@@ -16,3 +16,11 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/hello-lumen/{name}', function ($name) {
+    return "<h1>Lumen</h1><p>Hi <b>" . $name . "</b>, thank for using Lumen</p>";
+});
+
+$router->get('/scores', ['middleware' => 'login', function () {
+    return "<h1>Selamat!</h1><p>Nilai anda 100</p>";
+}]);
