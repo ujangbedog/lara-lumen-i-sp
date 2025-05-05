@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Latihan1;
+
+use Laravel\Lumen\Routing\Controller;
 
 class ProfileController extends Controller
 {

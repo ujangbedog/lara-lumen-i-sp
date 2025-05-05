@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Latihan2;
+
+use Laravel\Lumen\Routing\Controller;
 
 use App\Models\Post;
 

@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Latihan1;
 
-class BookController extends Controller
+use Laravel\Lumen\Routing\Controller;
+
+class CityController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
     public function __construct()
     {
         return "Lumen Controller";
@@ -17,8 +20,7 @@ class BookController extends Controller
     public function index()
     {
         return response()->json([
-            ['id' => 1, 'title' => 'Laravel for Beginners'],
-            ['id' => 2, 'title' => 'Lumen Microservices'],
+            'cities' => ['Bandung', 'Jakarta', 'Surabaya', 'Makassar']
         ]);
     }
 }
