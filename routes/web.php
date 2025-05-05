@@ -32,3 +32,6 @@ $router->get('/cities', 'CityController@index');
 $router->get('/profile/{id}', 'ProfileController@show');
 $router->get('/status', 'SystemController@status');
 $router->get('/secure-data', ['middleware' => 'apikey', 'uses' => 'SecureDataController@index']);
+
+//Latihan 2
+$router->get('/posts', 'PostController@index');
