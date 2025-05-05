@@ -79,6 +79,7 @@ $app->configure('app');
 $app->routeMiddleware([
     // 'auth' => App\Http\Middleware\Authenticate::class,
     'login' => App\Http\Middleware\LoginMiddleware::class,
+    'apikey' => App\Http\Middleware\ApiKeyMiddleware::class,
 ]);
 
 /*
