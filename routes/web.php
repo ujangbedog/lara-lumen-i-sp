@@ -13,9 +13,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', 'HomeController@index');
 
 $router->get('/hello-lumen/{name}', function ($name) {
     return "<h1>Lumen</h1><p>Hi <b>" . $name . "</b>, thank for using Lumen</p>";
@@ -24,3 +22,13 @@ $router->get('/hello-lumen/{name}', function ($name) {
 $router->get('/scores', ['middleware' => 'login', function () {
     return "<h1>Selamat!</h1><p>Nilai anda 100</p>";
 }]);
+
+$router->get('/users', 'UsersController@index');
+$router->get('/users/{id}', 'UsersController@show');
+
+//Latihan 1
+$router->get('/books', 'BookController@index');
+$router->get('/cities', 'CityController@index');
+$router->get('/profile/{id}', 'ProfileController@show');
+$router->get('/status', 'SystemController@status');
+$router->get('/secure-data', ['middleware' => 'apikey', 'uses' => 'SecureDataController@index']);
