@@ -15,5 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call('UsersTableSeeder');
+        $this->call([
+            AuthorSeeder::class,
+            CategorySeeder::class,
+            ArticleSeeder::class,
+            CommentSeeder::class,
+            TagSeeder::class,
+        ]);
     }
 }
