@@ -28,14 +28,11 @@ $router->group(['namespace' => 'Latihan1'], function () use ($router) {
     $router->get('/hello-lumen/{name}', function ($name) {
         return "<h1>Lumen</h1><p>Hi <b>" . $name . "</b>, thank for using Lumen</p>";
     });
-
     $router->get('/scores', ['middleware' => 'login', function () {
         return "<h1>Selamat!</h1><p>Nilai anda 100</p>";
     }]);
-
     $router->get('/users', 'UsersController@index');
     $router->get('/users/{id}', 'UsersController@show');
-
     $router->get('/books', 'BookController@index');
     $router->get('/cities', 'CityController@index');
     $router->get('/profile/{id}', 'ProfileController@show');
@@ -46,4 +43,11 @@ $router->group(['namespace' => 'Latihan1'], function () use ($router) {
 //Latihan 2
 $router->group(['namespace' => 'Latihan2'], function () use ($router) {
     $router->get('/posts', 'PostController@index');
+    $router->get('/articles', 'ArticleController@index');
+    $router->get('/articles/{id}', 'ArticleController@show');
+    $router->post('/articles', 'ArticleController@store');
+    $router->get('/authors', 'AuthorController@index');
+    $router->get('/categories', 'CategoryController@index');
+    $router->get('/comments', 'CommentController@index');
+    $router->get('/tags', 'TagController@index');
 });
