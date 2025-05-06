@@ -56,3 +56,24 @@ $router->group(['prefix' => 'latihan3', 'namespace' => 'Latihan3'], function () 
     $router->put('/product/{id}', 'ProductController@update');
     $router->delete('/product/{id}', 'ProductController@destroy');
 });
+
+//Uts
+$router->group(['prefix' => 'uts', 'namespace' => 'Uts'], function () use ($router) {
+    $router->get('/customers', 'CustomerController@index');
+    $router->post('/customers', 'CustomerController@store');
+    $router->get('/customer/{id}', 'CustomerController@show');
+    $router->put('/customer/{id}', 'CustomerController@update');
+    $router->delete('/customer/{id}', 'CustomerController@destroy');
+
+    $router->get('/orders', 'OrderController@index');
+    $router->post('/orders', 'OrderController@store');
+    $router->get('/order/{id}', 'OrderController@show');
+    $router->put('/order/{id}', 'OrderController@update');
+    $router->delete('/order/{id}', 'OrderController@destroy');
+
+    $router->get('/employees', 'EmployeeController@index');
+    $router->post('/employees', 'EmployeeController@store');
+    $router->get('/employee/{id}', 'EmployeeController@show');
+    $router->put('/employee/{id}', 'EmployeeController@update');
+    $router->delete('/employee/{id}', 'EmployeeController@destroy');
+});
