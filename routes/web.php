@@ -77,3 +77,21 @@ $router->group(['prefix' => 'uts', 'namespace' => 'Uts'], function () use ($rout
     $router->put('/employee/{id}', 'EmployeeController@update');
     $router->delete('/employee/{id}', 'EmployeeController@destroy');
 });
+
+//Group Latihan 4
+$router->group(['prefix' => 'latihan4', 'namespace' => 'Latihan4'], function () use ($router) {
+    $router->get('/posts', 'PostController@index');
+    $router->post('/posts', 'PostController@store');
+    $router->get('/post/{id}', 'PostController@show');
+    $router->put('/post/{id}', 'PostController@update');
+    $router->delete('/post/{id}', 'PostController@destroy');
+});
+
+//Group Latihan 5
+$router->group(['prefix' => 'latihan5', 'namespace' => 'Latihan5'], function () use ($router) {
+    $router->get('/posts', 'PostController@index');
+    $router->post('/posts', 'PostController@store');
+    $router->get('/post/{id}', 'PostController@show');
+    $router->put('/post/{id}', 'PostController@update');
+    $router->delete('/post/{id}', 'PostController@destroy');
+});
