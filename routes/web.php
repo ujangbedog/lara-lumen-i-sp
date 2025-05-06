@@ -99,4 +99,20 @@ $router->group(['prefix' => 'latihan5', 'namespace' => 'Latihan5'], function () 
 //Group Auth (Latihan 6)
 $router->group(['prefix' => 'auth', 'namespace' => 'Auth'], function () use ($router) {
     $router->post('/register', 'AuthController@register');
+    $router->post('/login', 'AuthController@login');
+});
+
+//Group Latihan 6 with middleware auth
+$router->group(['middleware' => ['auth'], 'prefix' => 'latihan6', 'namespace' => 'Latihan6'], function () use ($router) {
+    $router->get('/posts', 'PostController@index');
+    $router->post('/posts', 'PostController@store');
+    $router->get('/post/{id}', 'PostController@show');
+    $router->put('/post/{id}', 'PostController@update');
+    $router->delete('/post/{id}', 'PostController@destroy');
+
+    $router->get('/books', 'BookController@index');
+    $router->post('/books', 'BookController@store');
+    $router->get('/book/{id}', 'BookController@show');
+    $router->put('/book/{id}', 'BookController@update');
+    $router->delete('/book/{id}', 'BookController@destroy');
 });
