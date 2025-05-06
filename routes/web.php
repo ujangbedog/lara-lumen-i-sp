@@ -95,3 +95,8 @@ $router->group(['prefix' => 'latihan5', 'namespace' => 'Latihan5'], function () 
     $router->put('/post/{id}', 'PostController@update');
     $router->delete('/post/{id}', 'PostController@destroy');
 });
+
+//Group Auth (Latihan 6)
+$router->group(['prefix' => 'auth', 'namespace' => 'Auth'], function () use ($router) {
+    $router->post('/register', 'AuthController@register');
+});
