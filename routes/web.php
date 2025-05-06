@@ -2,26 +2,15 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
-
 $router->get('/', 'HomeController@index');
 
-//test from folder
+// Test dari folder "Coba"
 $router->group(['namespace' => 'Coba'], function () use ($router) {
     $router->get('/coba', 'CobaController@index');
 });
 
-//Latihan 1
-$router->group(['namespace' => 'Latihan1'], function () use ($router) {
+// Latihan 1
+$router->group(['prefix' => 'latihan1', 'namespace' => 'Latihan1'], function () use ($router) {
     $router->get('/hello-lumen', function () {
         return "<h1>Lumen</h1><p>Hi good developer, thank for using Lumen</p>";
     });
@@ -40,8 +29,8 @@ $router->group(['namespace' => 'Latihan1'], function () use ($router) {
     $router->get('/secure-data', ['middleware' => 'apikey', 'uses' => 'SecureDataController@index']);
 });
 
-//Latihan 2
-$router->group(['namespace' => 'Latihan2'], function () use ($router) {
+//Group Latihan 2
+$router->group(['prefix' => 'latihan2', 'namespace' => 'Latihan2'], function () use ($router) {
     $router->get('/posts', 'PostController@index');
     $router->get('/articles', 'ArticleController@index');
     $router->get('/articles/{id}', 'ArticleController@show');
@@ -50,4 +39,20 @@ $router->group(['namespace' => 'Latihan2'], function () use ($router) {
     $router->get('/categories', 'CategoryController@index');
     $router->get('/comments', 'CommentController@index');
     $router->get('/tags', 'TagController@index');
+});
+
+//Group Latihan 3
+$router->group(['prefix' => 'latihan3', 'namespace' => 'Latihan3'], function () use ($router) {
+    $router->get('/posts', 'PostController@index');
+    $router->post('/posts', 'PostController@store');
+    $router->get('/post/{id}', 'PostController@show');
+    $router->put('/post/{id}', 'PostController@update');
+    $router->delete('/post/{id}', 'PostController@destroy');
+
+    //latihan
+    $router->get('/products', 'ProductController@index');
+    $router->post('/products', 'ProductController@store');
+    $router->get('/product/{id}', 'ProductController@show');
+    $router->put('/product/{id}', 'ProductController@update');
+    $router->delete('/product/{id}', 'ProductController@destroy');
 });
