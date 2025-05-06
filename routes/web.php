@@ -57,7 +57,7 @@ $router->group(['prefix' => 'latihan3', 'namespace' => 'Latihan3'], function () 
     $router->delete('/product/{id}', 'ProductController@destroy');
 });
 
-//Uts
+//UTS
 $router->group(['prefix' => 'uts', 'namespace' => 'Uts'], function () use ($router) {
     $router->get('/customers', 'CustomerController@index');
     $router->post('/customers', 'CustomerController@store');
@@ -115,4 +115,37 @@ $router->group(['middleware' => ['auth'], 'prefix' => 'latihan6', 'namespace' =>
     $router->get('/book/{id}', 'BookController@show');
     $router->put('/book/{id}', 'BookController@update');
     $router->delete('/book/{id}', 'BookController@destroy');
+});
+
+//UAS
+$router->group(['middleware' => ['auth'], 'prefix' => 'uas', 'namespace' => 'Uas'], function () use ($router) {
+    $router->get('/projects', 'ProjectController@index');
+    $router->post('/projects', 'ProjectController@store');
+    $router->get('/project/{id}', 'ProjectController@show');
+    $router->put('/project/{id}', 'ProjectController@update');
+    $router->delete('/project/{id}', 'ProjectController@destroy');
+
+    $router->get('/tasks', 'TaskController@index');
+    $router->post('/tasks', 'TaskController@store');
+    $router->get('/task/{id}', 'TaskController@show');
+    $router->put('/task/{id}', 'TaskController@update');
+    $router->delete('/task/{id}', 'TaskController@destroy');
+
+    $router->get('/events', 'EventController@index');
+    $router->post('/events', 'EventController@store');
+    $router->get('/event/{id}', 'EventController@show');
+    $router->put('/event/{id}', 'EventController@update');
+    $router->delete('/event/{id}', 'EventController@destroy');
+
+    $router->get('/notes', 'NoteController@index');
+    $router->post('/notes', 'NoteController@store');
+    $router->get('/note/{id}', 'NoteController@show');
+    $router->put('/note/{id}', 'NoteController@update');
+    $router->delete('/note/{id}', 'NoteController@destroy');
+
+    $router->get('/messages', 'MessageController@index');
+    $router->post('/messages', 'MessageController@store');
+    $router->get('/message/{id}', 'MessageController@show');
+    $router->put('/message/{id}', 'MessageController@update');
+    $router->delete('/message/{id}', 'MessageController@destroy');
 });
